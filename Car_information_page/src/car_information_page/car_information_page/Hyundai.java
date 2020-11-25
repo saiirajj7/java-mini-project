@@ -5,11 +5,14 @@
  */
 package car_information_page;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author sairaj
  */
-public class Hyundai extends javax.swing.JFrame {
+public class Hyundai extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Hyundai
@@ -53,13 +56,13 @@ public class Hyundai extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\i20.jpeg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("./Images/i20.jpeg")); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\venue.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("./Images/venue.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\creta.jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("./Images/creta.jpeg")); // NOI18N
         jLabel3.setText("jLabel3");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -76,6 +79,7 @@ public class Hyundai extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton1.setText("Back");
+        jButton1.addActionListener(this);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setText("6.25L - 11.49L");
@@ -305,4 +309,14 @@ public class Hyundai extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == jButton1) {
+			this.dispose();
+			Homepage page = new Homepage();
+			page.setVisible(true);
+			
+		}
+	}
 }

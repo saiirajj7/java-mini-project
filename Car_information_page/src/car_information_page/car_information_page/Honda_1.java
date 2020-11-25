@@ -8,12 +8,17 @@
  *
  * @author sairaj
  */
-public class Honda extends javax.swing.JFrame {
+package car_information_page;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Honda_1 extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form Honda
      */
-    public Honda() {
+    public Honda_1() {
         initComponents();
     }
 
@@ -45,13 +50,13 @@ public class Honda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\Jazz.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("./Images/Jazz.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\city.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("./Images/city.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\wrv.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("./Images/wrv.jpg")); // NOI18N
         jLabel3.setText("jLabel3");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -92,6 +97,7 @@ public class Honda extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton1.setText("Back");
+        jButton1.addActionListener(this);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,20 +221,20 @@ public class Honda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Honda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Honda_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Honda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Honda_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Honda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Honda_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Honda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Honda_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Honda().setVisible(true);
+                new Honda_1().setVisible(true);
             }
         });
     }
@@ -251,4 +257,14 @@ public class Honda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == jButton1) {
+			this.dispose();
+			Homepage page = new Homepage();
+			page.setVisible(true);
+		}
+		
+	}
 }

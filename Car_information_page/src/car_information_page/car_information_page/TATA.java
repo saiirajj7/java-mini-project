@@ -5,11 +5,14 @@
  */
 package car_information_page;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author sairaj
  */
-public class TATA extends javax.swing.JFrame {
+public class TATA extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form TATA
@@ -52,14 +55,15 @@ public class TATA extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton1.setText("BACK");
+        jButton1.addActionListener(this);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\tiago.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("./Images/Innova.png")); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\nexon.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("./Images/nexon.jpg")); // NOI18N
         jLabel3.setText("jLabel3");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\harrier.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("./Images/harrier.jpg")); // NOI18N
         jLabel4.setText("jLabel4");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -268,4 +272,14 @@ public class TATA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == jButton1) {
+			this.dispose();
+			Homepage page = new Homepage();
+			page.setVisible(true);
+		}
+		
+	}
 }
