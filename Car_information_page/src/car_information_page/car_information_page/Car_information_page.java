@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package car_information_page;
+//package car_information_page;
 
 /**
  *
  * @author sairaj
  */
+package car_information_page;
 public class Car_information_page {
 
     /**

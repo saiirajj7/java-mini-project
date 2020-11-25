@@ -1,19 +1,31 @@
+package car_information_page;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package car_information_page;
+
 
 /**
  *
  * @author sairaj
+ * 
  */
-public class Homepage extends javax.swing.JFrame {
+
+public class Homepage extends javax.swing.JFrame implements ActionListener, MouseListener {
 
     /**
      * Creates new form Homepage
      */
+	
+	public static JFrame frame = new JFrame();
     public Homepage() {
         initComponents();
     }
@@ -42,29 +54,35 @@ public class Homepage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\suzuki.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("./Images/suzuki.jpg")); // NOI18N
         jLabel1.setAlignmentY(0.0F);
+        jLabel1.addMouseListener(this);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel2.setText("           CAR MANAGEMENT SYSTEM");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\hyundai.jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("./Images/hyundai.jpeg")); // NOI18N
+        jLabel3.addMouseListener(this);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\HONDA.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("./Images/HONDA.jpg")); // NOI18N
         jLabel5.setText("jLabel5");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel5.addMouseListener(this);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton1.setText("ABOUT US");
+        jButton1.addActionListener(this);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton2.setText("EXIT");
+        jButton2.addActionListener(this);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jButton3.setText("CAR BRANDS");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\sairaj\\Downloads\\tata.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("./Images/tata.png")); // NOI18N
         jLabel4.setText("jLabel4");
+        jLabel4.addMouseListener(this);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,4 +188,65 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == jButton1) {
+			this.dispose();
+			About_us about = new About_us();
+			about.setVisible(true);
+		}
+		else if(e.getSource() == jButton2) this.dispose();
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == jLabel1) {
+			this.dispose();
+			Suzuki suzuki = new Suzuki();
+			suzuki.setVisible(true);
+		}
+		else if(e.getSource() == jLabel3) {
+			this.dispose();
+			Hyundai hyundai = new Hyundai();
+			hyundai.setVisible(true);
+		}
+		else if(e.getSource() == jLabel4) {
+			this.dispose();
+			TATA tata = new TATA();
+			tata.setVisible(true);
+		}
+		else if(e.getSource() == jLabel5) {
+			this.dispose();
+			Honda_1 honda = new Honda_1();
+			honda.setVisible(true);
+		}
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
